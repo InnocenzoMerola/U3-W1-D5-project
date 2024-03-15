@@ -19,8 +19,10 @@ class FirstGallery extends Component {
           throw new Error("Errore nella chiamata dell'api");
         }
       })
-      .then((data) => {
-        this.setState({ movies: data.Search });
+      .then((d) => {
+        this.setState({
+          movies: d.Search,
+        });
       })
       .catch((error) => {
         console.log("ERRORE", error);

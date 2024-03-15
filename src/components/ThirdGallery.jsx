@@ -19,9 +19,9 @@ class ThirdGallery extends Component {
           throw new Error("Errore nella chiamata all'api");
         }
       })
-      .then((data) => {
+      .then((d) => {
         this.setState({
-          movies: data.Search,
+          movies: d.Search,
         });
       })
       .catch((error) => {
