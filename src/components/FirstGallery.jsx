@@ -39,7 +39,7 @@ class FirstGallery extends Component {
     return (
       <>
         <h4 className="text-white">Harry Potter</h4>
-        <Row xs={1} sm={2} lg={4} xl={6} className="mb-4">
+        <Row xs={2} sm={2} lg={3} xl={6} className="mb-4">
           {six.map((movie) => (
             <Col className="mb-2 text-center px-1 col-img" key={movie.imdbID}>
               <img src={movie.Poster} alt={movie.Title} className="my-image" />
