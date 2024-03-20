@@ -74,13 +74,13 @@ const MovieDetails = function () {
       {movieObj && (
         <>
           <Row className="justify-content-center mt-4">
-            <Col md={4}>
+            <Col md={7} lg={4} className="text-center mb-3 mb-lg-0">
               <div>
                 <img src={movieObj.Poster} alt="film" />
               </div>
             </Col>
 
-            <Col md={6}>
+            <Col md={10} lg={6}>
               <Card>
                 <Card.Body>
                   <h4>{movieObj.Title}</h4>
@@ -98,13 +98,13 @@ const MovieDetails = function () {
               </Card>
             </Col>
           </Row>
-          <Row>
-            <Col md={6}>
+          <Row className="justify-content-center">
+            <Col md={10} lg={6}>
               <h2 className="mt-3 text-white">Add new Comment</h2>
               <AddComment id={params.movieId} />
             </Col>
 
-            <Col md={6}>
+            <Col md={10} lg={6}>
               <h2 className="mt-3 text-white">Comments</h2>
               <ListGroup>
                 {comment.map((comment) => (

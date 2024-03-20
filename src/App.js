@@ -8,7 +8,7 @@ import FirstGallery from "./components/FirstGallery";
 import Container from "react-bootstrap/esm/Container";
 import SecondGallery from "./components/SecondGallery";
 import ThirdGallery from "./components/ThirdGallery";
-import FourtGallery from "./components/FourtGalery";
+import FourtGallery from "./components/FourtGallery";
 import MovieDetails from "./components/MovieDetails";
 import SeriesGallery from "./components/SeriesGallery";
 

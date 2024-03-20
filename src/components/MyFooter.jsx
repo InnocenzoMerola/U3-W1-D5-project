@@ -5,9 +5,9 @@ import Container from "react-bootstrap/esm/Container";
 
 const MyFooter = function () {
   return (
-    <Container>
-      <Row className="justify-content-center mt-5">
-        <Col sm={6} md={6} lg={6}>
+    <Container fluid className="px-4">
+      <Row className="justify-content-center mt-5 g-0">
+        <Col sm={12} md={10} lg={6}>
           <Row>
             <Col className="mb-2">
               <i className="bi bi-facebook footer-icon me-2"></i>
@@ -17,7 +17,7 @@ const MyFooter = function () {
             </Col>
           </Row>
 
-          <Row xs={1} sm={2} md={4} lg={4}>
+          <Row xs={2} md={4} lg={4}>
             <Col>
               <Row>
                 <Col className="footer-links">
