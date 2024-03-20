@@ -15,6 +15,7 @@ import SeriesGallery from "./components/SeriesGallery";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SecondSeriesGallery from "./components/SecondSeriesGallery";
 import ThirdSeriesGallery from "./components/ThirdSeriesGallery";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
           </Routes>
         </Container>
         <MyFooter />
+        <ScrollToTop />
       </div>
     </BrowserRouter>
   );
