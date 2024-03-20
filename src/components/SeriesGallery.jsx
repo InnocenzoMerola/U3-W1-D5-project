@@ -3,13 +3,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Link } from "react-router-dom";
 
-const SeriesGallery = function () {
+const SeriesGallery = function (props) {
   const [movies, setMovies] = useState([]);
 
   const MY_KEY = "717484dc";
 
   const fetchThirdGall = () => {
-    fetch(`http://www.omdbapi.com/?apikey=${MY_KEY}&type=series&s=series`)
+    fetch(`http://www.omdbapi.com/?apikey=${MY_KEY}&type=series&s=${props.series}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -33,7 +33,7 @@ const SeriesGallery = function () {
 
   return (
     <>
-      <h4 className="text-white">Popolar series</h4>
+      <h4 className="text-white">{props.titleT}</h4>
       <Row xs={2} sm={2} lg={3} xl={6} className="mb-4">
         {six.map((movie) => (
           <Col className="mb-2 text-center px-1 col-img" key={movie.imdbID}>

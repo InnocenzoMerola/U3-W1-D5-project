@@ -4,17 +4,14 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MyNavbar from "./components/MyNavbar";
 import Header from "./components/Header";
 import MyFooter from "./components/MyFooter";
-import FirstGallery from "./components/FirstGallery";
+import Gallery from "./components/Gallery";
 import Container from "react-bootstrap/esm/Container";
-import SecondGallery from "./components/SecondGallery";
-import ThirdGallery from "./components/ThirdGallery";
-import FourtGallery from "./components/FourtGallery";
+
 import MovieDetails from "./components/MovieDetails";
 import SeriesGallery from "./components/SeriesGallery";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SecondSeriesGallery from "./components/SecondSeriesGallery";
-import ThirdSeriesGallery from "./components/ThirdSeriesGallery";
+
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -29,10 +26,10 @@ function App() {
               element={
                 <div>
                   <Header />
-                  <FirstGallery />
-                  <SecondGallery />
-                  <FourtGallery />
-                  <ThirdGallery />
+                  <Gallery saga={"harry potter"} title={"Harry Potter"} />
+                  <Gallery saga={"spider-man"} title={"Spider-man"} />
+                  <Gallery saga={"fast&furious"} title={"Fast & Furious"} />
+                  <Gallery saga={"terminator"} title={"Terminator"} />
                 </div>
               }
             />
@@ -42,9 +39,9 @@ function App() {
               element={
                 <div>
                   <Header />
-                  <SeriesGallery />
-                  <SecondSeriesGallery />
-                  <ThirdSeriesGallery />
+                  <SeriesGallery series={"series"} titleT={"Popolar series"} />
+                  <SeriesGallery series={"war"} titleT={"War"} />
+                  <SeriesGallery series={"horror"} titleT={"Horror series"} />
                 </div>
               }
             />
