@@ -51,8 +51,8 @@ const AddComment = function (props) {
   return (
     <div>
       <Form onSubmit={newComment}>
-        <Form.Group className="mb-3">
-          <Form.Label>Comment</Form.Label>
+        <Form.Group>
+          <Form.Label className="text-white fs-4">Comment</Form.Label>
           <Form.Control
             type="text"
             placeholder="Inserisci una recensione"
@@ -66,7 +66,7 @@ const AddComment = function (props) {
           />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Rate</Form.Label>
+          <Form.Label className="text-white fs-4">Rate</Form.Label>
           <Form.Control
             as="select"
             value={comment.rate}

@@ -1,7 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import Container from "react-bootstrap/Container";
 import { BsGrid, BsFillGrid3X3GapFill } from "react-icons/bs";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Header = function () {
   const location = useLocation();

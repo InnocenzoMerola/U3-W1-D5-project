@@ -10,8 +10,11 @@ import SecondGallery from "./components/SecondGallery";
 import ThirdGallery from "./components/ThirdGallery";
 import FourtGallery from "./components/FourtGalery";
 import MovieDetails from "./components/MovieDetails";
+import SeriesGallery from "./components/SeriesGallery";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SecondSeriesGallery from "./components/SecondSeriesGallery";
+import ThirdSeriesGallery from "./components/ThirdSeriesGallery";
 
 function App() {
   return (
@@ -19,20 +22,31 @@ function App() {
       <div className="totPage">
         <MyNavbar />
         <Container fluid className="px-4">
-          <Header />
           <Routes>
             <Route
               path="/"
               element={
                 <div>
+                  <Header />
                   <FirstGallery />
                   <SecondGallery />
                   <FourtGallery />
+                  <ThirdGallery />
                 </div>
               }
             />
 
-            <Route path="/tvShows" element={<ThirdGallery />} />
+            <Route
+              path="/tvShows"
+              element={
+                <div>
+                  <Header />
+                  <SeriesGallery />
+                  <SecondSeriesGallery />
+                  <ThirdSeriesGallery />
+                </div>
+              }
+            />
 
             <Route path="/movie-details/:movieId" element={<MovieDetails />} />
           </Routes>
