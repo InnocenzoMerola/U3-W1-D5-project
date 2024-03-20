@@ -1,17 +1,16 @@
-import { Component } from "react";
+import { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Link } from "react-router-dom";
 
-class SecondGallery extends Component {
-  state = {
-    movies: [],
-  };
+const SecondGallery = function () {
+  const [movies, setMovies] = useState([]);
 
-  MY_KEY = "717484dc";
-  saga = "spider-man";
+  const MY_KEY = "717484dc";
+  const saga = "spider-man";
 
-  fetchSecGall = () => {
-    fetch(`http://www.omdbapi.com/?apikey=${this.MY_KEY}&s=${this.saga}`)
+  const fetchSecGall = () => {
+    fetch(`http://www.omdbapi.com/?apikey=${MY_KEY}&s=${saga}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -20,34 +19,32 @@ class SecondGallery extends Component {
         }
       })
       .then((d) => {
-        this.setState({
-          movies: d.Search,
-        });
+        setMovies(d.Search);
       })
       .catch((error) => {
         console.log("ERRORE", error);
       });
   };
 
-  componentDidMount() {
-    this.fetchSecGall();
-  }
+  useEffect(() => {
+    fetchSecGall();
+  }, []);
 
-  render() {
-    const six = this.state.movies.slice(0, 6);
+  const six = movies.slice(0, 6);
 
-    return (
-      <>
-        <h4 className="text-white">Spider-man</h4>
-        <Row xs={2} sm={2} lg={3} xl={6} className="mb-4">
-          {six.map((movie) => (
-            <Col className="mb-2 text-center px-1 col-img" key={movie.imdbID}>
+  return (
+    <>
+      <h4 className="text-white">Spider-man</h4>
+      <Row xs={2} sm={2} lg={3} xl={6} className="mb-4">
+        {six.map((movie) => (
+          <Col className="mb-2 text-center px-1 col-img" key={movie.imdbID}>
+            <Link to={"/movie-details/" + movie.imdbID}>
               <img src={movie.Poster} alt={movie.Title} className="my-image" />
-            </Col>
-          ))}
-        </Row>
-      </>
-    );
-  }
-}
+            </Link>
+          </Col>
+        ))}
+      </Row>
+    </>
+  );
+};
 export default SecondGallery;

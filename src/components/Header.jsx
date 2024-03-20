@@ -1,13 +1,16 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import Container from "react-bootstrap/Container";
 import { BsGrid, BsFillGrid3X3GapFill } from "react-icons/bs";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = function () {
+  const location = useLocation();
   return (
     <Container fluid className="p-0">
       <div className="d-flex justify-content-between">
         <div className="d-flex">
-          <h2 className="mb-4 text-white">TV Shows</h2>
+          {location.pathname === "/" && <h2 className="mb-4 text-white">Main</h2>}
+          {location.pathname === "/tvShows" && <h2 className="mb-4 text-white">TV Shows</h2>}
           <div className="btn-group" role="group">
             <Dropdown className="dropdown ms-4 mt-1" data-bs-theme="dark">
               <Dropdown.Toggle
